@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: jobstracker
+
+server:
+  port: 9090
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/jobstracker}
+    username: ${DB_USERNAME:jobstracker}
+    password: ${DB_PASSWORD:jobstracker}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
