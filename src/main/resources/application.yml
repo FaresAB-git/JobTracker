@@ -1,6 +1,13 @@
 spring:
   application:
     name: jobstracker
+  config:
+    import: optional:file:.env[.properties]
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: 24h
 
 server:
   port: 9090

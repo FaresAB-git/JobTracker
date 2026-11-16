@@ -1,5 +1,7 @@
 package com.fares.jobstracker.auth;
 
+import com.fares.jobstracker.auth.dto.AuthResponse;
+import com.fares.jobstracker.auth.dto.LoginRequest;
 import com.fares.jobstracker.auth.dto.RegisterRequest;
 import com.fares.jobstracker.user.dto.UserResponse;
 import jakarta.validation.Valid;
@@ -18,5 +20,10 @@ public class AuthController {
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponse register(@Valid @RequestBody RegisterRequest request) {
         return authService.register(request);
+    }
+
+    @PostMapping("/login")
+    public AuthResponse login(@Valid @RequestBody LoginRequest request) {
+        return authService.login(request);
     }
 }
